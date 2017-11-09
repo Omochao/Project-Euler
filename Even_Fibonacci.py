@@ -1,20 +1,16 @@
-#Problem 2
 #By considering the terms in the Fibonacci sequence whose values do not exceed four million,
 #find the sum of the even-valued terms.
-memo = [0,1]
+import time
+memo = [1,2]
 def fib(n):
      if n < 2:
-          return n
+          return memo[n]
      elif n <= len(memo)-1:
           return memo[n]
      else:
           val = fib(n-1)+fib(n-2)
           memo.append(val)
           return val
-
-n = 0
-index = 0
-while n < 4000000:
-     n = fib(index)
-     index+=1
-print(sum([fib(n) for n in range(0,index-1,2)]))
+now = time.time()
+print(sum([fib(i) for i in range(4000000) if fib(i) % 2 == 0]))
+print(time.time() - now)
