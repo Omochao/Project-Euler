@@ -6,5 +6,5 @@ for i in range(2,s//3):
           k = s - i - j
           if i**2 + j**2 == k**2:
                print(i)
-               print (j)
+               print(j)
                print(k)
